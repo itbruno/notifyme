@@ -1,0 +1,98 @@
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700";
+* {
+	@include prefix(box-sizing, border-box);
+}
+// Global
+body {
+	color: #555;
+	height: 100%;
+	line-height: 20px;
+	margin: 0; padding: 0;
+	font:{
+		size: 14px;
+		family: $basefont;
+		weight: 300;
+	}
+}
+
+header {
+	background: #33435a;
+	color: #fff;
+	padding: 10px;
+
+	
+	.logo {
+		background: #83dcc4;
+		font-size: 18px;
+		font-weight: 300;
+		padding: 10px 30px;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+		@include prefix(border-radius, 2px);
+
+		span {
+			font-weight: 400;
+		}
+	}
+}
+
+.container {
+	padding: 10px;
+	max-width:	980px;
+	margin: 20px auto;
+}
+
+// Deafult Buttons
+.btn {
+	background: #33435a;
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 10px;
+	display: inline-block;
+	@include prefix(border-radius, 2px);
+
+	&.error { background: $red; }
+	&.info { background: $blue; }
+	&.success { background: $green; }
+}
+
+// ALERTS
+.notify {
+	position: fixed;
+	padding: 20px;
+	right: 0;
+	left: 0;
+	color: #fff;
+
+	.notify-close {
+		cursor: pointer;
+		position: absolute;
+		right:0;
+		top:0;
+		color: #fff;
+		padding: 10px 15px;
+		font-size: 20px;
+		text-decoration: none;		
+	}
+
+	h1 {
+		margin: 5px 0 10px 0;
+		text-transform: uppercase;
+		font-weight: 300;
+		color: #fff;
+	}
+
+	&[data-notify='success'] {
+		border-top: 5px solid $green;
+		background: $green;
+	}
+
+	&[data-notify='info'] {
+		border-top: 5px solid $blue;
+		background: $blue;
+	}
+
+	&[data-notify='error'] {
+		border-top: 5px solid $red;
+		background: $red;
+	}
+}

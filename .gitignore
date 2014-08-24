@@ -1,0 +1,10 @@
+# Default
+.DS_Store
+*.log
+
+# Nodejs Modules
+node_modules
+
+# CSS
+assets/css/*.css
+

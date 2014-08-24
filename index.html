@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+	<title>notifyME</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/base.css" />
+
+	<!-- Meta Tags -->
+	<meta name="viewport" content="width= device-width, initial-scale= 1">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="Descrição da página. Tente não ultrapassar 155 caracteres." />
+	
+	<!-- Google Authorship & Publisher Markup -->
+	<link rel="author" href="https://plus.google.com/+BrunoRodrigues01/posts"/>
+	<link rel="publisher" href="hhttps://plus.google.com/+BrunoRodrigues01"/>
+	
+</head>
+<body>
+	<header>
+		<div class="container">
+			<span class="logo">
+				NOTIFY<span>ME</span>
+			</span>
+		</div>
+	</header>
+	<div class="container">
+		<h1>
+			Lorem Ipsum
+		</h1>
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit.Alias perspiciatis ea eos, voluptatibus ut! Exercitationem minima, neque a fugiat atque porro libero.Impedit amet qui, earum ab fuga, aliquam rem.
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit.Alias perspiciatis ea eos, voluptatibus ut! Exercitationem minima, neque a fugiat atque porro libero.Impedit amet qui, earum ab fuga, aliquam rem.
+		</p>
+
+		<p>
+			<a href="#" class="btn error">Error</a>
+			<a href="#" class="btn info">Info</a>
+			<a href="#" class="btn success">Success</a>
+		</p>
+	</div>
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="assets/js/jquery.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('.error').on('click', function(){
+			$(this).notifyMe(
+				'error',
+				'Lorem Ipsum Text', 
+				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
+				200
+			);
+		});
+
+		$('.info').on('click', function(){
+			$(this).notifyMe(
+				'info',
+				'Lorem Ipsum Text', 
+				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
+				200
+			);
+		});
+
+		$('.success').on('click', function(){
+			$(this).notifyMe(
+				'success',
+				'Lorem Ipsum Text', 
+				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
+				200
+			);
+		});
+	});
+
+
+	</script>
+
+</body>
+</html>

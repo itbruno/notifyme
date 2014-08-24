@@ -1,0 +1,27 @@
+//
+// Useful Mixins
+//---------------------------------------
+ 
+@mixin prefix($prop, $val) {
+  @each $prefix in -webkit-, -moz-, -o-, '' {
+  	#{$prefix}#{$prop}: $val;
+  }
+}
+ 
+@mixin transparency($opacity){
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+  filter: alpha(opacity=($opacity * 100));
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  opacity: $opacity;
+}
+ 
+%clearfix{
+  *zoom: 1;
+  &:after, &:before {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;    
+  }
+}
