@@ -1,6 +1,6 @@
 How to use
 ---------------------
-Open terminal and install gulp and write.
+Open terminal, in the path of project, install the gulp
 
 	$ npm install --save-dev gulp
 After install gulp, install `gulp-sass-ruby` ([read documentation](https://npmjs.org/package/gulp-ruby-sass/)).
