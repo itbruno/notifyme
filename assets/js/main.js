@@ -1,5 +1,7 @@
 // Notifications
 (function($){
+	'use strict';
+	
 	// Define plugin name and parameters
 	$.fn.notifyMe = function($type, $title, $content, $velocity){
 		// Remove recent notification for appear new
