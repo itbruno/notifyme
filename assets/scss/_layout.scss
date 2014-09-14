@@ -1,98 +1,110 @@
+// Used Fonts
 @import "http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700";
+@import "http://fonts.googleapis.com/css?family=Pacifico)";
+@import "http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
 * {
 	@include prefix(box-sizing, border-box);
 }
+
 // Global
 body {
+	background: #e9faf7;
 	color: #555;
 	height: 100%;
 	line-height: 20px;
 	margin: 0; padding: 0;
+	position: relative;
 	font:{
-		size: 14px;
+		size: 13px;
 		family: $basefont;
-		weight: 300;
+		weight: 400;
 	}
 }
 
-header {
-	background: #33435a;
-	color: #fff;
+// Main Styles
+.container {
 	padding: 10px;
+	max-width:	600px;
+	margin: 0 auto;
+}
 
-	
+.topbar {
+	background: #fff;
+	pddding: 10px 0;
+	border-bottom: 3px solid #ddedea;
+}
+
+header {
+	text-align: center;
+
 	.logo {
-		background: #83dcc4;
-		font-size: 18px;
-		font-weight: 300;
-		padding: 10px 30px;
-		text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-		@include prefix(border-radius, 2px);
+		cursor: default;
+		margin: 60px auto;
+		display: block;
 
-		span {
-			font-weight: 400;
+		font: {
+			family: 'Pacifico', cursive;
+			size: 75px;
+		}
+		color: $yes-pink;
+		text-shadow: 3px 5px 0 #dfe3e8;
+		@include prefix(transition, all .4s ease);
+
+		&:hover {
+			color: darken($yes-pink, 5%);
+			text-shadow: 4px 8px 0 #dfe3e8;
 		}
 	}
 }
 
-.container {
-	padding: 10px;
-	max-width:	980px;
-	margin: 20px auto;
+// Deafult Buttons
+.btn-group {
+	margin: 30px 0;
 }
 
-// Deafult Buttons
 .btn {
-	background: #33435a;
+	background: #fff;
 	color: #fff;
 	text-decoration: none;
-	padding: 5px 10px;
+	padding: 15px 0px;
 	display: inline-block;
-	@include prefix(border-radius, 2px);
+	text-align: center;
+	text-transform: uppercase;
+	margin-right: 3%;
+	width: 30%;
+	@include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
+	@include prefix(border-radius, 3px);
 
 	&.error { background: $red; }
 	&.info { background: $blue; }
 	&.success { background: $green; }
+
+	&:last-child {
+		margin-right: 0;
+	}
 }
 
-// ALERTS
-.notify {
-	position: fixed;
-	padding: 20px;
+// Footer
+footer {
+	background: #fff;
+	position: absolute;
+	padding: 15px 0;
+	bottom: 0px;
 	right: 0;
 	left: 0;
-	color: #fff;
+	margin-top: 30px;
+	text-align: center;
+	color: #909090;
+	font-weight: 300;
 
-	.notify-close {
-		cursor: pointer;
-		position: absolute;
-		right:0;
-		top:0;
-		color: #fff;
-		padding: 10px 15px;
+	span, .fa-heart {
+		color: $yes-pink;
+		font-weight: 400;
+		@include prefix(transition, all .3s ease);
+	}
+
+	.fa-heart:hover {
 		font-size: 20px;
-		text-decoration: none;		
 	}
 
-	h1 {
-		margin: 5px 0 10px 0;
-		text-transform: uppercase;
-		font-weight: 300;
-		color: #fff;
-	}
-
-	&[data-notify='success'] {
-		border-top: 5px solid $green;
-		background: $green;
-	}
-
-	&[data-notify='info'] {
-		border-top: 5px solid $blue;
-		background: $blue;
-	}
-
-	&[data-notify='error'] {
-		border-top: 5px solid $red;
-		background: $red;
-	}
 }

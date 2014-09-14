@@ -1,0 +1,41 @@
+// ALERTS
+.notify {
+	position: fixed;
+	padding: 20px;
+	right: 0;
+	left: 0;
+	color: #fff;
+
+	.notify-close {
+		cursor: pointer;
+		position: absolute;
+		right:0;
+		top:0;
+		color: #fff;
+		padding: 10px 15px;
+		font-size: 20px;
+		text-decoration: none;
+	}
+
+	h1 {
+		margin: 5px 0 10px 0;
+		text-transform: uppercase;
+		font-weight: 300;
+		color: #fff;
+	}
+
+	&[data-notify='success'] {
+		border-top: 5px solid $green;
+		background: $green;
+	}
+
+	&[data-notify='info'] {
+		border-top: 5px solid $blue;
+		background: $blue;
+	}
+
+	&[data-notify='error'] {
+		border-top: 5px solid $red;
+		background: $red;
+	}
+}

@@ -6,26 +6,30 @@
 	<!-- Meta Tags -->
 	<meta name="viewport" content="width= device-width, initial-scale= 1">
 	<meta name="robots" content="index,follow">
-	<meta name="description" content="Descrição da página. Tente não ultrapassar 155 caracteres." />
-	
+	<meta name="description" content="notifyMe, is a simple js plugin for notifications in pages." />
+
 	<!-- Google Authorship & Publisher Markup -->
 	<link rel="author" href="https://plus.google.com/+BrunoRodrigues01/posts"/>
 	<link rel="publisher" href="hhttps://plus.google.com/+BrunoRodrigues01"/>
-	
+
 </head>
 <body>
+
+	<section class="topbar">
+		<div class="container">
+
+		</div>
+	</section>
+
 	<header>
 		<div class="container">
 			<span class="logo">
-				NOTIFY<span>ME</span>
+				notifyMe
 			</span>
 		</div>
 	</header>
+
 	<div class="container">
-		<h1>
-			Lorem Ipsum
-		</h1>
-
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit.Alias perspiciatis ea eos, voluptatibus ut! Exercitationem minima, neque a fugiat atque porro libero.Impedit amet qui, earum ab fuga, aliquam rem.
 		</p>
@@ -33,13 +37,16 @@
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit.Alias perspiciatis ea eos, voluptatibus ut! Exercitationem minima, neque a fugiat atque porro libero.Impedit amet qui, earum ab fuga, aliquam rem.
 		</p>
-
-		<p>
-			<a href="#" class="btn error">Error</a>
-			<a href="#" class="btn info">Info</a>
-			<a href="#" class="btn success">Success</a>
-		</p>
+		<div class="btn-group">
+			<a href="#" class="btn error"><i class="fa fa-warning"></i> Error</a>
+			<a href="#" class="btn info"><i class="fa fa-info"></i> Info</a>
+			<a href="#" class="btn success"><i class="fa fa-check"></i> Success</a>
+		</div>
 	</div>
+
+	<footer>
+		<span>notifyMe</span> is a plugin created with <i class="fa fa-heart"></i> by <a href="http://github.com/brunodsgn" title="Bruno Rodrigues">Me</a>, for fun and learning.
+	</footer>
 
 	<!-- SCRIPTS -->
 	<script type="text/javascript" src="assets/js/jquery.js"></script>
@@ -50,7 +57,7 @@
 		$('.error').on('click', function(){
 			$(this).notifyMe(
 				'error',
-				'Lorem Ipsum Text', 
+				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
 				200
 			);
@@ -59,7 +66,7 @@
 		$('.info').on('click', function(){
 			$(this).notifyMe(
 				'info',
-				'Lorem Ipsum Text', 
+				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
 				200
 			);
@@ -68,7 +75,7 @@
 		$('.success').on('click', function(){
 			$(this).notifyMe(
 				'success',
-				'Lorem Ipsum Text', 
+				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
 				200
 			);
