@@ -1,6 +1,7 @@
 # Default
 .DS_Store
 *.log
+*.psd
 
 # Nodejs Modules
 node_modules
