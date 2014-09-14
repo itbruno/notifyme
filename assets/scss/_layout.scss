@@ -29,9 +29,50 @@ body {
 }
 
 .topbar {
+	padding: 0;
 	background: #fff;
-	pddding: 10px 0;
 	border-bottom: 3px solid #ddedea;
+	text-align: center;
+
+	> .container {
+		padding: 0;
+	}
+
+	.top-items {
+		padding: 10px 20px;
+		color: $yes-pink;
+		display: inline-block;
+		position: relative;
+		text-align: center;
+		z-index: 30;
+		@include prefix(transition, all .3s ease);
+
+		.fa {
+			font-size: 15px;
+		}
+
+		&:after {
+			content: '';
+			background: $yes-pink;
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 0;
+			z-index: -1;
+			color: #fff;
+			@include prefix(transition, all .3s ease);
+		}
+
+		&:hover {
+			color: #fff;
+
+			&:after {
+				height: 100%;
+			}
+		}
+
+	}
 }
 
 header {
