@@ -2,14 +2,27 @@
 h1, h2, h3, h4 {
 	cursor: default;
 	font-weight: 400;
-	text-transform: uppercase;
 }
 
 p {
 	color: #707070;
+	margin-bottom: 20px;
 }
 
 a {
 	color: $blue;
 	text-decoration: none;
+}
+
+pre {
+	padding: 10px;
+	color: #909090;
+	background: #fff;
+	overflow: auto;
+	border-bottom: 3px solid #ddedea;
+}
+
+.feature {
+	color: $yes-pink;
+	font-weight: 400;
 }
