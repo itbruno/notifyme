@@ -1,6 +1,6 @@
 // Used Fonts
 @import "http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700";
-@import "http://fonts.googleapis.com/css?family=Pacifico)";
+@import "http://fonts.googleapis.com/css?family=Pacifico";
 @import "http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
 * {
 	@include prefix(box-sizing, border-box);
@@ -14,6 +14,7 @@ body {
 	line-height: 20px;
 	margin: 0; padding: 0;
 	position: relative;
+
 	font:{
 		size: 13px;
 		family: $basefont;
@@ -24,7 +25,7 @@ body {
 // Main Styles
 .container {
 	padding: 10px;
-	max-width:	600px;
+	max-width:	800px;
 	margin: 0 auto;
 }
 
@@ -36,6 +37,7 @@ body {
 
 	> .container {
 		padding: 0;
+		margin: 0 auto;
 	}
 
 	.top-items {
@@ -104,6 +106,7 @@ header {
 }
 
 .btn {
+	cursor: pointer;
 	background: #fff;
 	color: #fff;
 	text-decoration: none;
@@ -128,15 +131,12 @@ header {
 // Footer
 footer {
 	background: #fff;
-	position: absolute;
 	padding: 15px 0;
-	bottom: 0px;
-	right: 0;
-	left: 0;
 	margin-top: 30px;
 	text-align: center;
 	color: #909090;
 	font-weight: 300;
+	clear: both;
 
 	span, .fa-heart {
 		color: $yes-pink;
