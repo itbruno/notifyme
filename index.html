@@ -35,19 +35,32 @@
 	</header>
 
 	<div class="container">
-		<h1>What's notifyMe?</h1>
+		<h1>What's <span class="feature">notifyMe?</span></h1>
 		<p>
-			notifyMe is a simple plugin that i created for fun and learning for fixed notifications in pages.<br />
+			<span class="feature">notifyMe</span> is a simple plugin that i created for fun and learning for fixed notifications in pages.<br />
 			He works when a button is clicked, errors, validations, info and everything you want.
 		</p>
 
+		<h1>How to use</h1>
 		<p>
-
+			For use this plugin is necessary add jQuery lib in your page:
+			<pre>&lt;script src=&quot;http://code.jquery.com/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;</pre>
 		</p>
+
+		<p>
+			Add the <span class="feature">notifyMe.js</span> after jquery lib:
+			<pre>&lt;script src=&quot;notifyme.js&quot;&gt;&lt;/script&gt;</pre>
+		</p>
+
+		<p>
+			in a element is simple, for use when click in a button for example:
+			<pre>$('.error').on('click', function(){<br/>    $(this).notifyMe(<br/>        'error', // Type<br/>        'Lorem Ipsum Text', // Title<br/>        'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh', // Description<br/>        200 // Velocity of notification<br/>    );<br/>});</pre>
+		</p>
+
 		<div class="btn-group">
-			<a href="#" class="btn error"><i class="fa fa-warning"></i> Error</a>
-			<a href="#" class="btn info"><i class="fa fa-info"></i> Info</a>
-			<a href="#" class="btn success"><i class="fa fa-check"></i> Success</a>
+			<a class="btn error"><i class="fa fa-warning"></i> Error</a>
+			<a class="btn info"><i class="fa fa-info"></i> Info</a>
+			<a class="btn success"><i class="fa fa-check"></i> Success</a>
 		</div>
 	</div>
 
@@ -88,8 +101,6 @@
 			);
 		});
 	});
-
-
 	</script>
 
 </body>
