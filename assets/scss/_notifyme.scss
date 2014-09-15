@@ -2,9 +2,50 @@
 .notify {
 	position: fixed;
 	padding: 20px;
-	right: 0;
-	left: 0;
 	color: #fff;
+
+	// Position of Notifications
+	&[data-position="bottom"] {
+		right: 0;
+		left: 0;
+		bottom: 0;
+	}
+
+	&[data-position="top"] {
+		right: 0;
+		left: 0;
+		top:0;
+	}
+
+	&[data-position="right"] {
+		right: 0;
+		bottom: 0;
+		top: 0;
+		max-width: 300px;
+	}
+
+	&[data-position="left"] {
+		left: 0;
+		top: 0;
+		bottom: 0;
+		max-width: 300px;
+	}
+
+	// Type of Notifications
+	&[data-notify='success'] {
+		border-top: 5px solid $green;
+		background: $green;
+	}
+
+	&[data-notify='info'] {
+		border-top: 5px solid $blue;
+		background: $blue;
+	}
+
+	&[data-notify='error'] {
+		border-top: 5px solid $red;
+		background: $red;
+	}
 
 	.notify-close {
 		cursor: pointer;
@@ -24,18 +65,5 @@
 		color: #fff;
 	}
 
-	&[data-notify='success'] {
-		border-top: 5px solid $green;
-		background: $green;
-	}
 
-	&[data-notify='info'] {
-		border-top: 5px solid $blue;
-		background: $blue;
-	}
-
-	&[data-notify='error'] {
-		border-top: 5px solid $red;
-		background: $red;
-	}
 }
