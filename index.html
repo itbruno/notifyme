@@ -54,7 +54,7 @@
 
 		<p>
 			in a element is simple, for use when click in a button for example:
-			<pre>$('.error').on('click', function(){<br/>    $(this).notifyMe(<br/>        'error', // Type<br/>        'Lorem Ipsum Text', // Title<br/>        'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh', // Description<br/>        200 // Velocity of notification<br/>    );<br/>});</pre>
+			<pre>$('.error').on('click', function(){<br/>    $(this).notifyMe(<br/>        'bottom', // Position<br/>        'error', // Type<br/>        'Lorem Ipsum Text', // Title<br/>        'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh', // Description<br/>        200 // Velocity of notification<br/>    );<br/>});</pre>
 		</p>
 
 		<div class="btn-group">
@@ -76,6 +76,7 @@
 	$(document).ready(function(){
 		$('.error').on('click', function(){
 			$(this).notifyMe(
+				'bottom',
 				'error',
 				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
@@ -85,6 +86,7 @@
 
 		$('.info').on('click', function(){
 			$(this).notifyMe(
+				'top',
 				'info',
 				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
@@ -94,6 +96,7 @@
 
 		$('.success').on('click', function(){
 			$(this).notifyMe(
+				'left',
 				'success',
 				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
