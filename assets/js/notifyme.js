@@ -24,18 +24,8 @@
 			bottom: '0px'
 		},$velocity);
 
-		// Move Body
-		$('body').animate({
-			marginTop: '-' + notifyHeigth + 'px'
-		},$velocity);
-
 		// Close Notification
 		$('.notify-close').click(function(){
-			// Move body for up
-			$('body').animate({
-				marginTop: '0px'
-			},$velocity);
-
 			// Move notification for up
 			$(this).parent('.notify').animate({
 				bottom: '-' + notifyHeigth
