@@ -3,13 +3,13 @@
 	'use strict';
 
 	// Define plugin name and parameters
-	$.fn.notifyMe = function($type, $title, $content, $velocity){
+	$.fn.notifyMe = function($position, $type, $title, $content, $velocity){
 		// Remove recent notification for appear new
 		$('.notify').remove();
 
 		// Create the content of Alert
 		var close = "<a class='notify-close'>x</a>";
-		var header = "<section class='notify' data-notify='" + $type + "'>" + close + "<h1>" + $title + "</h1>";
+		var header = "<section class='notify' data-position='"+ $position +"' data-notify='" + $type + "'>" + close + "<h1>" + $title + "</h1>";
 		var content =  "<div class='notify-content'>" + $content + "</div></section>";
 
 		var notifyModel = header + content;
@@ -19,17 +19,59 @@
 		var notifyHeigth = $('.notify').outerHeight();
 
 		// Show Notification
-		$('.notify').css('bottom', '-' + notifyHeigth);
-		$('.notify').animate({
-			bottom: '0px'
-		},$velocity);
+
+		if($position == "bottom"){
+			$('.notify').css('bottom', '-' + notifyHeigth);
+			$('.notify').animate({
+				bottom: '0px'
+			},$velocity);
+		}
+
+		else if($position == "top"){
+			$('.notify').css('top', '-' + notifyHeigth);
+			$('.notify').animate({
+				top: '0px'
+			},$velocity);
+		}
+
+		else if($position == "right"){
+			$('.notify').css('right', '-' + notifyHeigth);
+			$('.notify').animate({
+				right: '0px'
+			},$velocity);
+		}
+
+		else if($position == "left"){
+			$('.notify').css('left', '-' + notifyHeigth);
+			$('.notify').animate({
+				left: '0px'
+			},$velocity);
+		}
+
 
 		// Close Notification
 		$('.notify-close').click(function(){
-			// Move notification for up
-			$(this).parent('.notify').animate({
-				bottom: '-' + notifyHeigth
-			},$velocity);
+			// Move notification
+			if($position == "bottom"){
+				$(this).parent('.notify').animate({
+					bottom: '-' + notifyHeigth
+				},$velocity);
+			}
+			else if($position == "top"){
+				$(this).parent('.notify').animate({
+					top: '-' + notifyHeigth
+				},$velocity);
+			}
+			else if($position == "right"){
+				$(this).parent('.notify').animate({
+					right: '-' + notifyHeigth
+				},$velocity);
+			}
+			else if($position == "left"){
+				$(this).parent('.notify').animate({
+					left: '-' + notifyHeigth
+				},$velocity);
+			}
 
 			// Remove item when close
 			setTimeout(function(){
