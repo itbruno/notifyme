@@ -58,6 +58,7 @@
 		</p>
 
 		<div class="btn-group">
+			<a class="btn default"><i class="fa fa-coffee"></i> Default</a>
 			<a class="btn error"><i class="fa fa-warning"></i> Error</a>
 			<a class="btn info"><i class="fa fa-info"></i> Info</a>
 			<a class="btn success"><i class="fa fa-check"></i> Success</a>
@@ -101,6 +102,16 @@
 				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
 				400
+			);
+		});
+
+		$('.default').on('click', function(){
+			$(this).notifyMe(
+				'right',
+				'default',
+				'Lorem Ipsum Text',
+				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
+				500
 			);
 		});
 	});

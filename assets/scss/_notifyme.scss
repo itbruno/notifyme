@@ -47,6 +47,11 @@
 		background: $red;
 	}
 
+	&[data-notify='default'] {
+		border-top: 5px solid $yes-pink;
+		background: $yes-pink;
+	}
+
 	.notify-close {
 		cursor: pointer;
 		position: absolute;
