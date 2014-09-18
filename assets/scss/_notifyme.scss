@@ -33,18 +33,19 @@
 
 	// Type of Notifications
 	&[data-notify='success'] {
-		border-top: 5px solid $green;
 		background: $green;
 	}
 
 	&[data-notify='info'] {
-		border-top: 5px solid $blue;
 		background: $blue;
 	}
 
 	&[data-notify='error'] {
-		border-top: 5px solid $red;
 		background: $red;
+	}
+
+	&[data-notify='default'] {
+		background: $yes-pink;
 	}
 
 	.notify-close {

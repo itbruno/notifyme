@@ -115,13 +115,14 @@ header {
 	text-align: center;
 	text-transform: uppercase;
 	margin-right: 3%;
-	width: 30%;
+	width: 22%;
 	@include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
 	@include prefix(border-radius, 3px);
 
 	&.error { background: $red; }
 	&.info { background: $blue; }
 	&.success { background: $green; }
+	&.default { background: $yes-pink; }
 
 	&:last-child {
 		margin-right: 0;
