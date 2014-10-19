@@ -25,9 +25,13 @@ In `gulpfile.js` we have just one task for compile sass. Write in terminal:
 or `gulp watch` for watch the changes and auto compile:
 
 	$ gulp watch
-	
+
 How to use
 ----------
+
+Call the stylesheet with the styles
+
+	<link rel="assets/css/notifyme.css" type="text/css" />
 
 For use this plugin is necessary add jQuery lib in your page:
 
