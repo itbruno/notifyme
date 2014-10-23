@@ -25,6 +25,13 @@
 			$('.notify').animate({
 				bottom: '0px'
 			},$velocity);
+
+			// Close Notifications automatically
+			setTimeout(function(){
+				$('.notify').animate({
+					bottom: '-' + notifyHeigth
+				},$velocity);
+			},2000);
 		}
 
 		else if($position == "top"){
@@ -32,6 +39,13 @@
 			$('.notify').animate({
 				top: '0px'
 			},$velocity);
+
+			// Close Notification automatically
+			setTimeout(function(){
+				$('.notify').animate({
+					top: '-' + notifyHeigth
+				},$velocity);
+			},2000);
 		}
 
 		else if($position == "right"){
@@ -39,6 +53,13 @@
 			$('.notify').animate({
 				right: '0px'
 			},$velocity);
+
+			// Close Notification automatically
+			setTimeout(function(){
+				$('.notify').animate({
+					right: '-' + notifyHeigth
+				},$velocity);
+			},2000);
 		}
 
 		else if($position == "left"){
@@ -46,8 +67,14 @@
 			$('.notify').animate({
 				left: '0px'
 			},$velocity);
-		}
 
+			// Close Notifications automatically
+			setTimeout(function(){
+				$('.notify').animate({
+					left: '-' + notifyHeigth
+				},$velocity);
+			},2000);
+		}
 
 		// Close Notification
 		$('.notify-close').click(function(){
@@ -79,6 +106,8 @@
 			},$velocity + 200);
 
 		});
+
+
 	}
 }(jQuery));
 
