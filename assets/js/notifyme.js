@@ -3,7 +3,7 @@
 	'use strict';
 
 	// Define plugin name and parameters
-	$.fn.notifyMe = function($position, $type, $title, $content, $velocity){
+	$.fn.notifyMe = function($position, $type, $title, $content, $velocity, $delay){
 		// Remove recent notification for appear new
 		$('.notify').remove();
 
@@ -27,11 +27,18 @@
 			},$velocity);
 
 			// Close Notifications automatically
-			setTimeout(function(){
-				$('.notify').animate({
-					bottom: '-' + notifyHeigth
-				},$velocity);
-			},2000);
+			if(typeof $delay !== 'undefined') {
+				setTimeout(function(){
+					$('.notify').animate({
+						bottom: '-' + notifyHeigth
+					},$velocity);
+
+					// Remove item when close
+					setTimeout(function(){
+						$('.notify').remove();
+					},$velocity + 100);
+				},$delay);
+			}
 		}
 
 		else if($position == "top"){
@@ -41,11 +48,18 @@
 			},$velocity);
 
 			// Close Notification automatically
-			setTimeout(function(){
-				$('.notify').animate({
-					top: '-' + notifyHeigth
-				},$velocity);
-			},2000);
+			if(typeof $delay !== 'undefined') {
+				setTimeout(function(){
+					$('.notify').animate({
+						top: '-' + notifyHeigth
+					},$velocity);
+
+					// Remove item when close
+					setTimeout(function(){
+						$('.notify').remove();
+					},$velocity + 100);
+				},$delay);
+			}
 		}
 
 		else if($position == "right"){
@@ -55,11 +69,18 @@
 			},$velocity);
 
 			// Close Notification automatically
-			setTimeout(function(){
-				$('.notify').animate({
-					right: '-' + notifyHeigth
-				},$velocity);
-			},2000);
+			if(typeof $delay !== 'undefined') {
+				setTimeout(function(){
+					$('.notify').animate({
+						right: '-' + notifyHeigth
+					},$velocity);
+
+					// Remove item when close
+					setTimeout(function(){
+						$('.notify').remove();
+					},$velocity + 100);
+				},$delay);
+			}
 		}
 
 		else if($position == "left"){
@@ -69,11 +90,18 @@
 			},$velocity);
 
 			// Close Notifications automatically
-			setTimeout(function(){
-				$('.notify').animate({
-					left: '-' + notifyHeigth
-				},$velocity);
-			},2000);
+			if(typeof $delay !== 'undefined') {
+				setTimeout(function(){
+					$('.notify').animate({
+						left: '-' + notifyHeigth
+					},$velocity);
+
+					// Remove item when close
+					setTimeout(function(){
+						$('.notify').remove();
+					},$velocity + 100);
+				},$delay);
+			}
 		}
 
 		// Close Notification

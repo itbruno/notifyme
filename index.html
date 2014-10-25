@@ -60,7 +60,7 @@
 
 		<p>
 			in a element is simple, for use when click in a button for example:
-			<pre>$('.error').on('click', function(){<br/>    $(this).notifyMe(<br/>        'bottom', // Position<br/>        'error', // Type<br/>        'Lorem Ipsum Text', // Title<br/>        'Lorem Ipsum is simply dummy text of the printing', // Description<br/>        200 // Velocity of notification<br/>    );<br/>});</pre>
+			<pre>$('.error').on('click', function(){<br/>    $(this).notifyMe(<br/>        'bottom', // Position<br/>        'error', // Type<br/>        'Lorem Ipsum Text', // Title<br/>        'Lorem Ipsum is simply dummy text of the printing', // Description<br/>        200 // Velocity of notification<br/>	2000 // (optional) Time of delay to close automatically<br/>    );<br/>});</pre>
 		</p>
 
 		<div class="btn-group">
@@ -72,7 +72,7 @@
 	</div>
 
 	<footer>
-		<span>notifyMe</span> is a plugin created with <i class="fa fa-heart"></i> by <a href="http://github.com/brunodsgn" title="Bruno Rodrigues">Me</a>, for fun and learning.
+		<span>notifyMe</span> is a plugin created with <i class="fa fa-heart"></i> by <a href="http://github.com/brunodsgn" title="Bruno Rodrigues">Me</a>, for fun, for me, for you and learning.
 	</footer>
 
 	<!-- SCRIPTS -->
@@ -87,7 +87,8 @@
 				'error',
 				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
-				200
+				200,
+				1500
 			);
 		});
 
@@ -97,7 +98,8 @@
 				'info',
 				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
-				300
+				300,
+				1500
 			);
 		});
 
@@ -107,7 +109,8 @@
 				'success',
 				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
-				400
+				400,
+				2000
 			);
 		});
 
@@ -117,7 +120,8 @@
 				'default',
 				'Lorem Ipsum Text',
 				'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh',
-				500
+				500,
+				2000
 			);
 		});
 	});
