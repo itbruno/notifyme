@@ -50,5 +50,6 @@ in a element is simple, for use when click in a button for example:
             'Lorem Ipsum Text', // Title
             'Lorem ipsum dolos lorem uisnsnd h jsakdh ajkdbh', // Description
             200 // Velocity of notification
+            2000 // (optional) Time of delay to close automatically
         );
     });

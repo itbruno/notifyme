@@ -3,7 +3,7 @@
 	'use strict';
 
 	// Define plugin name and parameters
-	$.fn.notifyMe = function($position, $type, $title, $content, $velocity){
+	$.fn.notifyMe = function($position, $type, $title, $content, $velocity, $delay){
 		// Remove recent notification for appear new
 		$('.notify').remove();
 
@@ -25,6 +25,20 @@
 			$('.notify').animate({
 				bottom: '0px'
 			},$velocity);
+
+			// Close Notifications automatically
+			if(typeof $delay !== 'undefined') {
+				setTimeout(function(){
+					$('.notify').animate({
+						bottom: '-' + notifyHeigth
+					},$velocity);
+
+					// Remove item when close
+					setTimeout(function(){
+						$('.notify').remove();
+					},$velocity + 100);
+				},$delay);
+			}
 		}
 
 		else if($position == "top"){
@@ -32,6 +46,20 @@
 			$('.notify').animate({
 				top: '0px'
 			},$velocity);
+
+			// Close Notification automatically
+			if(typeof $delay !== 'undefined') {
+				setTimeout(function(){
+					$('.notify').animate({
+						top: '-' + notifyHeigth
+					},$velocity);
+
+					// Remove item when close
+					setTimeout(function(){
+						$('.notify').remove();
+					},$velocity + 100);
+				},$delay);
+			}
 		}
 
 		else if($position == "right"){
@@ -39,6 +67,20 @@
 			$('.notify').animate({
 				right: '0px'
 			},$velocity);
+
+			// Close Notification automatically
+			if(typeof $delay !== 'undefined') {
+				setTimeout(function(){
+					$('.notify').animate({
+						right: '-' + notifyHeigth
+					},$velocity);
+
+					// Remove item when close
+					setTimeout(function(){
+						$('.notify').remove();
+					},$velocity + 100);
+				},$delay);
+			}
 		}
 
 		else if($position == "left"){
@@ -46,8 +88,21 @@
 			$('.notify').animate({
 				left: '0px'
 			},$velocity);
-		}
 
+			// Close Notifications automatically
+			if(typeof $delay !== 'undefined') {
+				setTimeout(function(){
+					$('.notify').animate({
+						left: '-' + notifyHeigth
+					},$velocity);
+
+					// Remove item when close
+					setTimeout(function(){
+						$('.notify').remove();
+					},$velocity + 100);
+				},$delay);
+			}
+		}
 
 		// Close Notification
 		$('.notify-close').click(function(){
@@ -79,6 +134,8 @@
 			},$velocity + 200);
 
 		});
+
+
 	}
 }(jQuery));
 
