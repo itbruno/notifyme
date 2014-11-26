@@ -20,6 +20,11 @@ body {
 		family: $basefont;
 		weight: 400;
 	}
+	@media screen and (max-width: 480px) {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
 }
 
 // Main Styles
@@ -34,6 +39,7 @@ body {
 	background: #fff;
 	border-bottom: 3px solid #ddedea;
 	text-align: center;
+	font-size: 13px;
 
 	> .container {
 		padding: 0;
@@ -130,6 +136,8 @@ header {
 
 	@media screen and (max-width: 480px) {
 		width: 100%;
+		margin-bottom: 15px;
+		margin-right: 0;
 	}
 }
 
