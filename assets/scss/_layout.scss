@@ -127,6 +127,10 @@ header {
 	&:last-child {
 		margin-right: 0;
 	}
+
+	@media screen and (max-width: 480px) {
+		width: 100%;
+	}
 }
 
 // Footer
