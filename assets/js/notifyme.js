@@ -18,7 +18,7 @@
 
 		var notifyHeigth = $('.notify').outerHeight();
 
-		// Show Notification
+		// Function to show notification
 		function openNotification(position) {
 			var close = {};
 			var show = {};
@@ -42,6 +42,19 @@
 			}
 		}
 
+		// Function to close notifications
+		function closeNotification(position) {
+			var options = {};
+			options[position] = '-' + notifyHeigth;
+			$('.notify').animate(options, $velocity);
+
+			// Remove item when close
+			setTimeout(function(){
+				$('.notify').remove();
+			},$velocity + 100);
+		}
+
+		// Show notifications
 		if($position == "bottom"){
 			// Show notification
 			openNotification('bottom');
@@ -66,34 +79,18 @@
 		$('.notify-close').click(function(){
 			// Move notification
 			if($position == "bottom"){
-				$(this).parent('.notify').animate({
-					bottom: '-' + notifyHeigth
-				},$velocity);
+				closeNotification('bottom');
 			}
 			else if($position == "top"){
-				$(this).parent('.notify').animate({
-					top: '-' + notifyHeigth
-				},$velocity);
+				closeNotification('top');
 			}
 			else if($position == "right"){
-				$(this).parent('.notify').animate({
-					right: '-' + notifyHeigth
-				},$velocity);
+				closeNotification('right');
 			}
 			else if($position == "left"){
-				$(this).parent('.notify').animate({
-					left: '-' + notifyHeigth
-				},$velocity);
+				closeNotification('left');
 			}
-
-			// Remove item when close
-			setTimeout(function(){
-				$('.notify').remove();
-			},$velocity + 200);
-
 		});
-
-
 	}
 }(jQuery));
 
