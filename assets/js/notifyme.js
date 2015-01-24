@@ -19,19 +19,20 @@
 		var notifyHeigth = $('.notify').outerHeight();
 
 		// Show Notification
+		function openNotification(position) {
+			var close = {};
+			var show = {};
+			close[position] = '-' + notifyHeigth;
+			show[position] = '0px';
 
-		if($position == "bottom"){
-			$('.notify').css('bottom', '-' + notifyHeigth);
-			$('.notify').animate({
-				bottom: '0px'
-			},$velocity);
+			// Show notification
+			$('.notify').css(position, '-' + notifyHeigth);
+			$('.notify').animate(show,$velocity);
 
 			// Close Notifications automatically
 			if(typeof $delay !== 'undefined') {
 				setTimeout(function(){
-					$('.notify').animate({
-						bottom: '-' + notifyHeigth
-					},$velocity);
+					$('.notify').animate(close,$velocity);
 
 					// Remove item when close
 					setTimeout(function(){
@@ -39,69 +40,26 @@
 					},$velocity + 100);
 				},$delay);
 			}
+		}
+
+		if($position == "bottom"){
+			// Show notification
+			openNotification('bottom');
 		}
 
 		else if($position == "top"){
-			$('.notify').css('top', '-' + notifyHeigth);
-			$('.notify').animate({
-				top: '0px'
-			},$velocity);
-
-			// Close Notification automatically
-			if(typeof $delay !== 'undefined') {
-				setTimeout(function(){
-					$('.notify').animate({
-						top: '-' + notifyHeigth
-					},$velocity);
-
-					// Remove item when close
-					setTimeout(function(){
-						$('.notify').remove();
-					},$velocity + 100);
-				},$delay);
-			}
+			// Show notification
+			openNotification('top');
 		}
 
 		else if($position == "right"){
-			$('.notify').css('right', '-' + notifyHeigth);
-			$('.notify').animate({
-				right: '0px'
-			},$velocity);
-
-			// Close Notification automatically
-			if(typeof $delay !== 'undefined') {
-				setTimeout(function(){
-					$('.notify').animate({
-						right: '-' + notifyHeigth
-					},$velocity);
-
-					// Remove item when close
-					setTimeout(function(){
-						$('.notify').remove();
-					},$velocity + 100);
-				},$delay);
-			}
+			// Show notification
+			openNotification('right');
 		}
 
 		else if($position == "left"){
-			$('.notify').css('left', '-' + notifyHeigth);
-			$('.notify').animate({
-				left: '0px'
-			},$velocity);
-
-			// Close Notifications automatically
-			if(typeof $delay !== 'undefined') {
-				setTimeout(function(){
-					$('.notify').animate({
-						left: '-' + notifyHeigth
-					},$velocity);
-
-					// Remove item when close
-					setTimeout(function(){
-						$('.notify').remove();
-					},$velocity + 100);
-				},$delay);
-			}
+			// Show notification
+			openNotification('left');
 		}
 
 		// Close Notification
