@@ -16,17 +16,17 @@
 
 		$('body').prepend(notifyModel);
 
-		var notifyHeigth = $('.notify').outerHeight();
+		var notifyHeight = $('.notify').outerHeight();
 
 		// Function to show notification
 		function openNotification(position) {
 			var close = {};
 			var show = {};
-			close[position] = '-' + notifyHeigth;
+			close[position] = '-' + notifyHeight;
 			show[position] = '0px';
 
 			// Show notification
-			$('.notify').css(position, '-' + notifyHeigth);
+			$('.notify').css(position, '-' + notifyHeight);
 			$('.notify').animate(show,$velocity);
 
 			// Close Notifications automatically
@@ -45,7 +45,7 @@
 		// Function to close notifications
 		function closeNotification(position) {
 			var options = {};
-			options[position] = '-' + notifyHeigth;
+			options[position] = '-' + notifyHeight;
 			$('.notify').animate(options, $velocity);
 
 			// Remove item when close
