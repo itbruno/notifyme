@@ -36,22 +36,22 @@ How to use
 ----------
 
 Call the stylesheet with the styles
-```
+```html
 <link rel="assets/css/notifyme.css" type="text/css" />
 ```
 
 For use this plugin is necessary add jQuery lib in your page:
-```
+```html
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 ```
 
 Add the notifyMe.js after jquery lib:
-```
+```html
 <script type="text/javascript" src="assets/js/notifyme.js"></script>
 ```
 
 in a element is simple, for use when click in a button for example:
-```
+```js
 $('.error').on('click', function(){
 	$(this).notifyMe(
 		'bottom', // Position
