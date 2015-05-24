@@ -42,6 +42,25 @@
 			}
 		}
 
+		// Show notifications
+		switch($position) {
+			case "bottom":
+				openNotification('bottom');
+				break;
+
+			case "top":
+				openNotification('top');
+				break;
+
+			case "left":
+				openNotification('left');
+				break;
+
+			case "right":
+				openNotification('right');
+				break;
+		}
+
 		// Function to close notifications
 		function closeNotification(position) {
 			var options = {};
@@ -54,41 +73,25 @@
 			},$velocity + 100);
 		}
 
-		// Show notifications
-		if($position == "bottom"){
-			// Show notification
-			openNotification('bottom');
-		}
-
-		else if($position == "top"){
-			// Show notification
-			openNotification('top');
-		}
-
-		else if($position == "right"){
-			// Show notification
-			openNotification('right');
-		}
-
-		else if($position == "left"){
-			// Show notification
-			openNotification('left');
-		}
-
 		// Close Notification
 		$('.notify-close').click(function(){
 			// Move notification
-			if($position == "bottom"){
-				closeNotification('bottom');
-			}
-			else if($position == "top"){
-				closeNotification('top');
-			}
-			else if($position == "right"){
-				closeNotification('right');
-			}
-			else if($position == "left"){
-				closeNotification('left');
+			switch($position) {
+				case "bottom":
+					closeNotification('bottom');
+					break;
+
+				case "top":
+					closeNotification('top');
+					break;
+
+				case "left":
+					closeNotification('left');
+					break;
+
+				case "right":
+					closeNotification('right');
+					break;
 			}
 		});
 	}
