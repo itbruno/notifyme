@@ -6,11 +6,27 @@
 	$.fn.notifyMe = function($position, $type, $title, $content, $velocity, $delay){
 		// Remove recent notification for appear new
 		$('.notify').remove();
+        // Function to prepare content notification
+        function prepareContent(e){
+            if(typeof e == 'object'){
+                var html_error ="";
 
+                for(var key in e){
+                    console.log(e[key]);
+                    if(typeof e[key] == 'object'){
+                        html_error = html_error + '<li>'+ e[key][0]+'</li>';
+                    }else{
+                        html_error = html_error + '<li>'+ e[key]+'</li>';
+                    }
+                }
+                return html_error;
+            }
+            return e;
+        }
 		// Create the content of Alert
 		var close = "<a class='notify-close'>x</a>";
 		var header = "<section class='notify' data-position='"+ $position +"' data-notify='" + $type + "'>" + close + "<h1>" + $title + "</h1>";
-		var content =  "<div class='notify-content'>" + $content + "</div></section>";
+		var content =  "<div class='notify-content'>" + prepareContent($content) + "</div></section>";
 
 		var notifyModel = header + content;
 
