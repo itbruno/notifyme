@@ -6,25 +6,24 @@
 	$.fn.notifyMe = function($position, $type, $title, $content, $velocity, $delay){
 		// Remove recent notification for appear new
 		$('.notify').remove();
-        // Function to prepare content notification
-        function prepareContent(e){
-            if(typeof e == 'object'){
-                var html_error ="";
-
-                for(var key in e){
-                    console.log(e[key]);
-                    if(typeof e[key] == 'object'){
-                        html_error += SingleItemTemplate(e[key][0]);
+        // Function to prepare content
+        function prepareContent($content){
+            if(typeof $content == 'object'){
+                var itemsList ="";
+                for(var key in $content){
+                    console.log($content[key]);
+                    if(typeof $content[key] == 'object'){
+                        itemsList += singleItemTemplate($content[key][0]);
                     }else{
-                        html_error += SingleItemTemplate(e[key]);
+                        itemsList += singleItemTemplate($content[key]);
                     }
                 }
-                return html_error;
+                return itemsList;
             }
-            return e;
+            return $content;
         }
-        // Function to prepare content notification
-        function SingleItemTemplate(text){
+        // Function to prepare Single item HTML 
+        function singleItemTemplate(text){
             return '<li class="notify-single-item">'+ text+'</li>';
         }
 
