@@ -14,9 +14,9 @@
                 for(var key in e){
                     console.log(e[key]);
                     if(typeof e[key] == 'object'){
-                        html_error = html_error + SingleItemTemplate(e[key][0]);
+                        html_error += SingleItemTemplate(e[key][0]);
                     }else{
-                        html_error = html_error +SingleItemTemplate(e[key]);
+                        html_error += SingleItemTemplate(e[key]);
                     }
                 }
                 return html_error;
