@@ -14,15 +14,20 @@
                 for(var key in e){
                     console.log(e[key]);
                     if(typeof e[key] == 'object'){
-                        html_error = html_error + '<li>'+ e[key][0]+'</li>';
+                        html_error = html_error + SingleItemTemplate(e[key][0]);
                     }else{
-                        html_error = html_error + '<li>'+ e[key]+'</li>';
+                        html_error = html_error +SingleItemTemplate(e[key]);
                     }
                 }
                 return html_error;
             }
             return e;
         }
+        // Function to prepare content notification
+        function SingleItemTemplate(text){
+            return '<li class="notify-single-item">'+ text+'</li>';
+        }
+
 		// Create the content of Alert
 		var close = "<a class='notify-close'>x</a>";
 		var header = "<section class='notify' data-position='"+ $position +"' data-notify='" + $type + "'>" + close + "<h1>" + $title + "</h1>";
