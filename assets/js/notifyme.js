@@ -3,35 +3,46 @@
 	'use strict';
 
 	// Define plugin name and parameters
-	$.fn.notifyMe = function($position, $type, $title, $content, $velocity, $delay){
+	$.fn.notifyMe = function(options){
+
+		// Register options
+		var position = options.position,
+			type = options.type || 'default',
+			title = options.title,
+			content = options.content,
+			velocity = options.velocity || 500,
+			delay = options.delay || 2000;
+
 		// Remove recent notification for appear new
+
 		$('.notify').remove();
+
         // Function to prepare content
-        function prepareContent($content){
-            if(typeof $content == 'object'){
+        function prepareContent(content){
+            if(typeof content == 'object'){
                 var itemsList ="";
-                for(var key in $content){
-                    console.log($content[key]);
-                    if(typeof $content[key] == 'object'){
-                        itemsList += singleItemTemplate($content[key][0]);
+                for(var key in content){
+                    console.log(content[key]);
+                    if(typeof content[key] == 'object'){
+                        itemsList += singleItemTemplate(content[key][0]);
                     }else{
-                        itemsList += singleItemTemplate($content[key]);
+                        itemsList += singleItemTemplate(content[key]);
                     }
                 }
                 return itemsList;
             }
-            return $content;
+            return content;
         }
-        // Function to prepare Single item HTML 
+
+        // Function to prepare Single item HTML
         function singleItemTemplate(text){
             return '<li class="notify-single-item">'+ text+'</li>';
         }
 
 		// Create the content of Alert
 		var close = "<a class='notify-close'>x</a>";
-		var header = "<section class='notify' data-position='"+ $position +"' data-notify='" + $type + "'>" + close + "<h1>" + $title + "</h1>";
-		var content =  "<div class='notify-content'>" + prepareContent($content) + "</div></section>";
-
+		var header = "<section class='notify' data-position='"+ position +"' data-notify='" + type + "'>" + close + "<h1>" + title + "</h1>";
+		var content =  "<div class='notify-content'>" + prepareContent(content) + "</div></section>";
 		var notifyModel = header + content;
 
 		$('body').prepend(notifyModel);
@@ -47,23 +58,23 @@
 
 			// Show notification
 			$('.notify').css(position, '-' + notifyHeight);
-			$('.notify').animate(show,$velocity);
+			$('.notify').animate(show,velocity);
 
 			// Close Notifications automatically
-			if(typeof $delay !== 'undefined') {
+			if(typeof delay !== 'undefined') {
 				setTimeout(function(){
-					$('.notify').animate(close,$velocity);
+					$('.notify').animate(close,velocity);
 
 					// Remove item when close
 					setTimeout(function(){
 						$('.notify').remove();
-					},$velocity + 100);
-				},$delay);
+					},velocity + 100);
+				}, delay);
 			}
 		}
 
 		// Show notifications
-		switch($position) {
+		switch(position) {
 			case "bottom":
 				openNotification('bottom');
 				break;
@@ -85,18 +96,18 @@
 		function closeNotification(position) {
 			var options = {};
 			options[position] = '-' + notifyHeight;
-			$('.notify').animate(options, $velocity);
+			$('.notify').animate(options, velocity);
 
 			// Remove item when close
 			setTimeout(function(){
 				$('.notify').remove();
-			},$velocity + 100);
+			},velocity + 100);
 		}
 
 		// Close Notification
 		$('.notify-close').click(function(){
 			// Move notification
-			switch($position) {
+			switch(position) {
 				case "bottom":
 					closeNotification('bottom');
 					break;
