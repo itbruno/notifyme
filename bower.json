@@ -11,7 +11,7 @@
     "notify"
   ],
   "license": "MIT",
-  "homepage": "http://brunodsgn.github.io/notifyme/",
+  "homepage": "http://itbruno.github.io/notifyme/",
   "ignore": [
     "**/.*",
     "node_modules",
