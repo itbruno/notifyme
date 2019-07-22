@@ -1,22 +1,23 @@
 // Notifications
+var autoClose = null;
+
 (function($){
-	'use strict';
-
-	// Define plugin name and parameters
+    'use strict';
+    
+    // Define plugin name and parameters
 	$.fn.notifyMe = function(options){
-
-		// Register options
+        // Register options
 		var position = options.position,
 			type = options.type || 'default',
 			title = options.title,
 			content = options.content,
 			velocity = options.velocity || 500,
-			delay = options.delay || 2000;
+            delay = options.delay || 2000;
 
 		// Remove recent notification for appear new
 
-		$('.notify').remove();
-
+        $('.notify').remove();
+        
         // Function to prepare content
         function prepareContent(content){
             if(typeof content == 'object'){
@@ -44,56 +45,60 @@
 		var header = "<section class='notify' data-position='"+ position +"' data-notify='" + type + "'>" + close + "<h1>" + title + "</h1>";
 		var content =  "<div class='notify-content'>" + prepareContent(content) + "</div></section>";
 		var notifyModel = header + content;
-
-		$('body').prepend(notifyModel);
-
-		var notifyHeight = $('.notify').outerHeight();
+        $('.notify').remove();
+        $('body').prepend(notifyModel);
+        var notifyHeight = $('.notify').outerHeight();
 
 		// Function to show notification
 		function openNotification(position) {
-			var close = {};
+            var close = {};
 			var show = {};
 			close[position] = '-' + notifyHeight;
-			show[position] = '0px';
+            show[position] = '0px';
+
+            if(autoClose != null) {
+                clearInterval(autoClose);
+            }
 
 			// Show notification
 			$('.notify').css(position, '-' + notifyHeight);
-			$('.notify').animate(show,velocity);
+            $('.notify').animate(show, velocity);
+            
+            // Close Notifications automatically
+            if(typeof delay !== 'undefined') {
+                autoClose = setTimeout(function(){
+                    $('.notify').animate(close,velocity);
 
-			// Close Notifications automatically
-			if(typeof delay !== 'undefined') {
-				setTimeout(function(){
-					$('.notify').animate(close,velocity);
-
-					// Remove item when close
-					setTimeout(function(){
-						$('.notify').remove();
-					},velocity + 100);
-				}, delay);
-			}
+                    // Remove item when close
+                    setTimeout(function(){
+                        $('.notify').remove();
+                    },velocity + 100);
+                }, delay);
+            }
 		}
 
 		// Show notifications
 		switch(position) {
 			case "bottom":
-				openNotification('bottom');
-				break;
+                openNotification('bottom');
+                break;
 
 			case "top":
-				openNotification('top');
-				break;
+                openNotification('top');
+                break;
 
 			case "left":
-				openNotification('left');
-				break;
+                openNotification('left');
+                break;
 
 			case "right":
-				openNotification('right');
-				break;
+                openNotification('right');
+                break;
 		}
 
 		// Function to close notifications
 		function closeNotification(position) {
+            clearTimeout(autoClose);
 			var options = {};
 			options[position] = '-' + notifyHeight;
 			$('.notify').animate(options, velocity);
@@ -124,8 +129,8 @@
 					closeNotification('right');
 					break;
 			}
-		});
-	}
+        });
+    }
 }(jQuery));
 
 
