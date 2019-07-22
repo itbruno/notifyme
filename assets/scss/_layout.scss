@@ -10,13 +10,12 @@
 body {
 	background: #e9faf7;
 	color: #555;
-	height: 100%;
-	line-height: 20px;
+	line-height: 1.8em;
 	margin: 0; padding: 0;
 	position: relative;
 
 	font:{
-		size: 13px;
+		size: 15px;
 		family: $basefont;
 		weight: 400;
 	}
@@ -79,7 +78,6 @@ body {
 				height: 100%;
 			}
 		}
-
 	}
 }
 

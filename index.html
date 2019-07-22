@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-	<title>notifyME</title>
+	<title>notifyME v1.2.0</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/base.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/notifyme.css" />
 
@@ -14,89 +14,75 @@
 
 	<section class="topbar">
 		<div class="container">
-			<a href="https://github.com/brunodsgn/notifyme/archive/master.zip" class="top-items" title="Download notifyMe"><i class="fa fa-download"></i> Download</a>
-			<a href="https://github.com/brunodsgn/notifyme" class="top-items" title="Fork notifyMe"><i class="fa fa-github"></i> Fork me</a>
-			<a href="http://twitter.com/_brunoweb" title="@_brunoweb" class="top-items"><i class="fa fa-twitter"></i> Say 'Hello!'</a>
+			<a target="_blank" href="https://github.com/itbruno/notifyme/archive/master.zip" class="top-items" title="Download notifyMe"><i class="fa fa-download"></i> Download v1.2.0</a>
+			<a target="_blank" href="https://github.com/itbruno/notifyme" class="top-items" title="Fork notifyMe"><i class="fa fa-github"></i> Fork me</a>
+			<a target="_blank" href="http://twitter.com/_brunoweb" title="@_brunoweb" class="top-items"><i class="fa fa-twitter"></i> Say 'Hello!'</a>
 		</div>
 	</section>
 
 	<header>
 		<div class="container">
-			<span class="logo">
+			<h1 class="logo">
 				notifyMe
-			</span>
+            </h1>
 		</div>
 	</header>
 
 	<div class="container">
-		<h1>What's <span class="feature">notifyMe?</span></h1>
+		<h2>What's <span class="feature">notifyMe?</span></h2>
 		<p>
 			<span class="feature">notifyMe</span> is a simple plugin that i created for fun and learning for fixed notifications in pages.<br />
 			He works when a button is clicked, errors, validations, info and everything you want.
-		</p>
+        </p>
+        
+        <div class="btn-group">
+            <a class="btn default"><i class="fa fa-coffee"></i> Default</a>
+            <a class="btn error"><i class="fa fa-warning"></i> Error</a>
+            <a class="btn info"><i class="fa fa-info"></i> Info</a>
+            <a class="btn success"><i class="fa fa-check"></i> Success</a>
+        </div>
 
-		<h1>How to use</h1>
+		<h2>How to use</h2>
 		<p>
 			Call the stylesheet with the styles
-			<pre>&lt;link rel=&quot;assets/css/notifyme.css&quot; type=&quot;text/css&quot; /&gt;</pre>
+			<script src="https://gist.github.com/itbruno/5f4468ccca5e6458d89720ee5ed37a10.js?file=notifyme.css"></script>
 		</p>
 
-		<p>
-			For use this plugin is necessary add jQuery lib in your page:
-			<pre>&lt;script src=&quot;http://code.jquery.com/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;</pre>
-		</p>
-
-		<p>
-			Add the <span class="feature">notifyMe.js</span> after jquery lib:
-			<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;assets/js/notifyme.js&quot;&gt;&lt;/script&gt;</pre>
+		<p class="has-code">
+            For use this plugin is necessary add jQuery lib in your page:
+            Add the <span class="feature">notifyMe.js</span> after jquery lib:
+			<script src="https://gist.github.com/itbruno/5f4468ccca5e6458d89720ee5ed37a10.js?file=notifyme.js"></script>
 		</p>
 
 		<p>
 			in a element is simple, for use when click in a button for example:
-			<pre>$('.error').on('click', function(){<br/>    $(this).notifyMe({<br/>	<i>position</i>: 'bottom',<br/>        <i>type</i>: 'error', // Type<br/>        <i>title</i>: 'Lorem Ipsum Text', // Title<br/>        <i>content</i>: 'Lorem Ipsum is simply dummy text of the printing', // Description<br/>        <i>velocity</i>: 200 // Velocity of notification<br/>	<i>delay</i>: 2000 // (optional) Time of delay to close automatically<br/>    });<br/>});</pre>
+			<script src="https://gist.github.com/itbruno/5f4468ccca5e6458d89720ee5ed37a10.js?file=call-notification.js"></script>
 		</p>
 
-		<h2>Optionals</h2>
-		<ul>
-			<li>
-				<strong>type</strong> <i>[type = string]</i>
-				<ul>
-					<li>error</li>
-					<li>success</li>
-					<li>info</li>
-					<li>default</li>
-				</ul>
-			</li>
-
-			<li>
-				<strong>position</strong> <i>[type = string]</i>
-				<ul>
-					<li>top</li>
-					<li>bottom</li>
-					<li>left</li>
-					<li>right</li>
-				</ul>
-			</li>
-
-			<li>
-				<strong>velocity</strong> <i>[type = int]</i>
-			</li>
-
-			<li>
-				<strong>delay</strong> <i>[type = int]</i>
-			</li>
-		</ul>
-
-		<div class="btn-group">
-			<a class="btn default"><i class="fa fa-coffee"></i> Default</a>
-			<a class="btn error"><i class="fa fa-warning"></i> Error</a>
-			<a class="btn info"><i class="fa fa-info"></i> Info</a>
-			<a class="btn success"><i class="fa fa-check"></i> Success</a>
-		</div>
+		<h2>Options</h2>
+        
+        <h3><strong>type</strong> <i>[type = string]</i></h3>
+        <ul>
+            <li>error</li>
+            <li>success</li>
+            <li>info</li>
+            <li>default</li>
+        </ul>
+			
+        <h3><strong>position</strong> <i>[type = string]</i></h3>
+        <ul>
+            <li>top</li>
+            <li>bottom</li>
+            <li>left</li>
+            <li>right</li>
+        </ul>
+			
+        <h3><strong>velocity</strong> <i>[type = int]</i></h3>
+        <h3><strong>delay</strong> <i>[type = int]</i></h3>
 	</div>
 
 	<footer>
-		<span>notifyMe</span> is a plugin created with <i class="fa fa-heart"></i> by <a href="http://github.com/brunodsgn" title="Bruno Rodrigues">Me</a>, for fun, for me, for you and learning.
+		<span>notifyMe</span> is a plugin created with <i class="fa fa-heart"></i> by <a href="http://itbruno.com.br" title="Bruno Rodrigues">Me</a>, for fun, for me, for you and learning.
 	</footer>
 
 	<!-- SCRIPTS -->

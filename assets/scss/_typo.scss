@@ -1,12 +1,18 @@
 // Default Titles
 h1, h2, h3, h4 {
-	cursor: default;
-	font-weight: 400;
+    cursor: default;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 30px 0 20px;
+    font-weight: 600;
 }
 
 p {
 	color: #707070;
-	margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 a {
@@ -19,7 +25,11 @@ pre {
 	color: #909090;
 	background: #fff;
 	overflow: auto;
-	border-bottom: 3px solid #ddedea;
+    border-bottom: 3px solid #ddedea;
+}
+
+pre, .gist {
+    margin-bottom: 30px;
 }
 
 .feature {
