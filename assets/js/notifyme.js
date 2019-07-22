@@ -1,102 +1,118 @@
 // Notifications
-(function($){
-	'use strict';
+var autoClose = null;
 
-	// Define plugin name and parameters
-	$.fn.notifyMe = function($position, $type, $title, $content, $velocity, $delay){
+(function($){
+    'use strict';
+    
+    // Define plugin name and parameters
+	$.fn.notifyMe = function(options){
+        // Register options
+		var position = options.position,
+			type = options.type || 'default',
+			title = options.title,
+			content = options.content,
+			velocity = options.velocity || 500,
+            delay = options.delay || 2000;
+
 		// Remove recent notification for appear new
-		$('.notify').remove();
+
+        $('.notify').remove();
+        
         // Function to prepare content
-        function prepareContent($content){
-            if(typeof $content == 'object'){
+        function prepareContent(content){
+            if(typeof content == 'object'){
                 var itemsList ="";
-                for(var key in $content){
-                    console.log($content[key]);
-                    if(typeof $content[key] == 'object'){
-                        itemsList += singleItemTemplate($content[key][0]);
+                for(var key in content){
+                    console.log(content[key]);
+                    if(typeof content[key] == 'object'){
+                        itemsList += singleItemTemplate(content[key][0]);
                     }else{
-                        itemsList += singleItemTemplate($content[key]);
+                        itemsList += singleItemTemplate(content[key]);
                     }
                 }
                 return itemsList;
             }
-            return $content;
+            return content;
         }
-        // Function to prepare Single item HTML 
+
+        // Function to prepare Single item HTML
         function singleItemTemplate(text){
             return '<li class="notify-single-item">'+ text+'</li>';
         }
 
 		// Create the content of Alert
 		var close = "<a class='notify-close'>x</a>";
-		var header = "<section class='notify' data-position='"+ $position +"' data-notify='" + $type + "'>" + close + "<h1>" + $title + "</h1>";
-		var content =  "<div class='notify-content'>" + prepareContent($content) + "</div></section>";
-
+		var header = "<section class='notify' data-position='"+ position +"' data-notify='" + type + "'>" + close + "<h1>" + title + "</h1>";
+		var content =  "<div class='notify-content'>" + prepareContent(content) + "</div></section>";
 		var notifyModel = header + content;
-
-		$('body').prepend(notifyModel);
-
-		var notifyHeight = $('.notify').outerHeight();
+        $('.notify').remove();
+        $('body').prepend(notifyModel);
+        var notifyHeight = $('.notify').outerHeight();
 
 		// Function to show notification
 		function openNotification(position) {
-			var close = {};
+            var close = {};
 			var show = {};
 			close[position] = '-' + notifyHeight;
-			show[position] = '0px';
+            show[position] = '0px';
+
+            if(autoClose != null) {
+                clearInterval(autoClose);
+            }
 
 			// Show notification
 			$('.notify').css(position, '-' + notifyHeight);
-			$('.notify').animate(show,$velocity);
+            $('.notify').animate(show, velocity);
+            
+            // Close Notifications automatically
+            if(typeof delay !== 'undefined') {
+                autoClose = setTimeout(function(){
+                    $('.notify').animate(close,velocity);
 
-			// Close Notifications automatically
-			if(typeof $delay !== 'undefined') {
-				setTimeout(function(){
-					$('.notify').animate(close,$velocity);
-
-					// Remove item when close
-					setTimeout(function(){
-						$('.notify').remove();
-					},$velocity + 100);
-				},$delay);
-			}
+                    // Remove item when close
+                    setTimeout(function(){
+                        $('.notify').remove();
+                    },velocity + 100);
+                }, delay);
+            }
 		}
 
 		// Show notifications
-		switch($position) {
+		switch(position) {
 			case "bottom":
-				openNotification('bottom');
-				break;
+                openNotification('bottom');
+                break;
 
 			case "top":
-				openNotification('top');
-				break;
+                openNotification('top');
+                break;
 
 			case "left":
-				openNotification('left');
-				break;
+                openNotification('left');
+                break;
 
 			case "right":
-				openNotification('right');
-				break;
+                openNotification('right');
+                break;
 		}
 
 		// Function to close notifications
 		function closeNotification(position) {
+            clearTimeout(autoClose);
 			var options = {};
 			options[position] = '-' + notifyHeight;
-			$('.notify').animate(options, $velocity);
+			$('.notify').animate(options, velocity);
 
 			// Remove item when close
 			setTimeout(function(){
 				$('.notify').remove();
-			},$velocity + 100);
+			},velocity + 100);
 		}
 
 		// Close Notification
 		$('.notify-close').click(function(){
 			// Move notification
-			switch($position) {
+			switch(position) {
 				case "bottom":
 					closeNotification('bottom');
 					break;
@@ -113,8 +129,8 @@
 					closeNotification('right');
 					break;
 			}
-		});
-	}
+        });
+    }
 }(jQuery));
 
 

@@ -2,7 +2,7 @@
 .DS_Store
 *.log
 *.psd
-
+*.map
 # Nodejs Modules
 node_modules
 

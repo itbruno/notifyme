@@ -52,15 +52,16 @@ Add the notifyMe.js after jquery lib:
 
 in a element is simple, for use when click in a button for example:
 ```js
+// Call notification when click in .error button, div, etc
 $('.error').on('click', function(){
-	$(this).notifyMe(
-		'bottom', // Position
-		'error', // Type
-		'Example Title', // Title
-		'Some text to show in your notification', // Description
-		200 // Velocity of notification
-		2000 // (optional) Time of delay to close automatically
-	);
-})
+    $(this).notifyMe({
+        position: 'bottom',
+        type: 'error',
+        title: 'Lorem Ipsum Text',
+        content: 'Lorem Ipsum is simply dummy text of the printing',
+        velocity: 200,
+        delay: 2000 
+    });
+});
 ```
 [1]: http://www.gulpjs.com
