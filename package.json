@@ -2,10 +2,7 @@
 	"name": "notifyme",
 	"version": "1.2.1",
 	"description": "notifyME, is a useful and simple fixed notifications to show info, alerts and anything.",
-	"main": [
-		"assets/js/notifyme.js",
-		"assets/css/notifyme.css"
-	],
+	"main": "assets/js/notifyme.min.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},

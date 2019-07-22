@@ -4,7 +4,7 @@
   "version": "1.2.1",
   "authors": ["Bruno Rodrigues"],
   "main": [
-    "assets/js/notifyme.js",
+    "assets/js/notifyme.min.js",
     "assets/css/notifyme.css"
   ],
   "keywords": [
